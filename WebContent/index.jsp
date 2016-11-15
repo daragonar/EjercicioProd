@@ -8,7 +8,7 @@ if(request.getAttribute("page")!=null)
 }
 switch (pag) {
 case "prod":
-	pag= new String("pages/detalles.jsp");
+	pag= new String("pages/detalles1.jsp");
 break;
 case "listado":
 	pag= new String("pages/home.jsp");
