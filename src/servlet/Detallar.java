@@ -30,15 +30,10 @@ public class Detallar extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		 ArrayList<Producto> productos= new ArrayList<>();
-		 for (int i =0;i<6;i++)
-		 {
-			 Producto p = new Producto("Producto "+ i , "", "Lorem ipsum");
-			 productos.add(p);
-		 }
 		 int val= Integer.parseInt(request.getParameter("prod"));
 		 val--;
-		 request.setAttribute("producto", productos.get(val));
+		 GestorProducto produc= new GestorProducto();
+		 request.setAttribute("producto", produc.getProducto(val));
 		 request.setAttribute("page", "prod");
 	     request.getRequestDispatcher("index.jsp").forward(request, response);
 
